@@ -4,6 +4,7 @@ from .models import Advertisement
 from .serializers import AdvertisementSerializer
 from .permissions import IsOwner
 from django_filters import rest_framework
+from .filters import AdvertisementFilter
 
 
 class AdvertisementViewSet(ModelViewSet):
@@ -13,6 +14,7 @@ class AdvertisementViewSet(ModelViewSet):
     serializer_class = AdvertisementSerializer
     permission_classes = [IsAuthenticated, IsOwner]
     filter_backends = [rest_framework.DjangoFilterBackend]
+    filterset_class = AdvertisementFilter
     filterset_fields = ['creator', 'created_at', 'status']
 
     def get_permissions(self):
