@@ -13,9 +13,7 @@ class AdvertisementViewSet(ModelViewSet):
     serializer_class = AdvertisementSerializer
     permission_classes = [IsAuthenticated, IsOwner]
     filter_backends = [rest_framework.DjangoFilterBackend]
-    search_fields = ['creator', 'created_at', 'status']
-    # TODO: настройте ViewSet, укажите атрибуты для кверисета,
-    #   сериализаторов и фильтров
+    filterset_fields = ['creator', 'created_at', 'status']
 
     def get_permissions(self):
         """Получение прав для действий."""

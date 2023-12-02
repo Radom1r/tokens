@@ -32,11 +32,11 @@ Authorization: Token 283e180a27699f7d2c8bab0bfd5369026318676c
 ###
 
 # фильтрация по создателю
-GET {{baseUrl}}/advertisements/?creator=1
+GET {{baseUrl}}/advertisements/?creator=2
 Content-Type: application/json
 
 ###
 
 # фильтрация по дате
-GET {{baseUrl}}/advertisements/?created_at_before=2024-10-01
+GET {{baseUrl}}/advertisements/?created_at_after=2020-12-03
 Content-Type: application/json
